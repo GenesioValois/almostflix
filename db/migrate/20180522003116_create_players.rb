@@ -1,16 +1,11 @@
 class CreatePlayers < ActiveRecord::Migration[5.2]
   def change
     create_table :players do |t|
-      t.string :start_date
-      t.string :datetime
-      t.string :end_date
-      t.string :datetime
-      t.string :elapsed_time
-      t.string :time
-      t.string :movie
-      t.string :references
-      t.string :user
-      t.string :references
+      t.datetime :start_date
+      t.datetime :end_date
+      t.time :elapsed_time
+      t.references :movie, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
