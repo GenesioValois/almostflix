@@ -14,6 +14,7 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       t.string :category
       t.string :references
       t.string :thumbnail_cover_key
+      t.boolean :highlighted , default: false
 
       t.timestamps
     end
